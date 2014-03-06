@@ -1,8 +1,8 @@
 ""==========================================
-" Author: laughing	 
+" Author: laughing
 " Version: 0.1
 " Email: longzhiyi6608@gmail.com
-" BlogPost: 
+" BlogPost:
 " ReadMe: README.md
 " Last_modify: 2013-11-06
 " Sections:
@@ -534,10 +534,10 @@ map <leader><space> :FixWhitespace<cr>
 
 "主题 solarized
 Bundle 'altercation/vim-colors-solarized'
-"let g:solarized_termcolors=256
-"let g:solarized_termtrans=1
-"let g:solarized_contrast="normal"
-"let g:solarized_visibility="normal"
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+let g:solarized_contrast="normal"
+let g:solarized_visibility="normal"
 
 "主题 molokai
 Bundle 'tomasr/molokai'
@@ -555,23 +555,50 @@ let g:molokai_original = 1
 "迄今为止用到的最好的自动VIM自动补全插件
 Bundle 'Valloric/YouCompleteMe'
 "youcompleteme 默认tab s-tab 和自动补全冲突
-"let g:ycm_key_list_select_completion=['<c-n>']
-let g:ycm_key_list_select_completion = ['<Down>']
-"let g:ycm_key_list_previous_completion=['<c-p>']
-let g:ycm_key_list_previous_completion = ['<Up>']
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/.ycm_extra_conf.py'
+let g:ycm_key_list_select_completion=['<c-n>']
+"let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion=['<c-p>']
+"let g:ycm_key_list_previous_completion = ['<Up>']
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 
 
 "快速插入代码片段
 "Bundle 'vim-scripts/UltiSnips'
-"Bundle 'SirVer/ultisnips'
-"let g:UltiSnipsExpandTrigger = "<tab>"
-"let g:UltiSnipsJumpForwardTrigger = "<tab>"
+Bundle 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
 "定义存放代码片段的文件夹 .vim/snippets下，使用自定义和默认的，将会的到全局，有冲突的会提示
 "let g:UltiSnipsSnippetDirectories=["snippets", "bundle/UltiSnips/UltiSnips"]
 
 "快速 加减注释
-"Bundle 'scrooloose/nerdcommenter'
+"[count]<leader>cc |NERDComComment|
+"Comment out the current line or text selected in visual mode.
+"[count]<leader>cn |NERDComNestedComment|
+"Same as <leader>cc but forces nesting.
+"[count]<leader>c |NERDComToggleComment|
+"Toggles the comment state of the selected line(s). If the topmost selected line is commented, all selected lines are uncommented and vice versa.
+"[count]<leader>cm |NERDComMinimalComment|
+"Comments the given lines using only one set of multipart delimiters.
+"[count]<leader>ci |NERDComInvertComment|
+"Toggles the comment state of the selected line(s) individually.
+"[count]<leader>cs |NERDComSexyComment|
+"Comments out the selected lines ``sexily''
+"[count]<leader>cy |NERDComYankComment|
+"Same as <leader>cc except that the commented line(s) are yanked first.
+"<leader>c$ |NERDComEOLComment|
+"Comments the current line from the cursor to the end of line.
+"<leader>cA |NERDComAppendComment|
+"Adds comment delimiters to the end of line and goes into insert mode between them.
+"|NERDComInsertComment|
+"Adds comment delimiters at the current cursor position and inserts between. Disabled by default.
+"<leader>ca |NERDComAltDelim|
+"Switches to the alternative set of delimiters.
+"[count]<leader>cl
+"[count]<leader>cb |NERDComAlignedComment|
+"Same as |NERDComComment| except that the delimiters are aligned down the left side (<leader>cl) or both sides (<leader>cb).
+"[count]<leader>cu |NERDComUncommentLine|
+"Uncomments the selected line(s).
+Bundle 'scrooloose/nerdcommenter'
 
 " 快速加入修改环绕字符
 "Bundle 'tpope/vim-surround'
@@ -579,9 +606,9 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/.ycm_extra_co
 "Bundle 'tpope/vim-repeat'
 
 "自动补全单引号，双引号等
-Bundle 'Raimondi/delimitMate'
+"Bundle 'Raimondi/delimitMate'
 " for python docstring ",优化输入
-au FileType python let b:delimitMate_nesting_quotes = ['"']
+"au FileType python let b:delimitMate_nesting_quotes = ['"']
 
 "for code alignment
 "Bundle 'godlygeek/tabular'
@@ -691,7 +718,7 @@ endif
 
 
 " 修改主题和颜色展示
-colorscheme molokai
+colorscheme solarized
 
 "set background=dark
 set t_Co=256
