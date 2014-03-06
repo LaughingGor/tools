@@ -312,7 +312,7 @@ au InsertLeave * set nopaste
 "cmap w!! %!sudo tee > /dev/null %
 " w!! to sudo & write a file
 "cmap w!! w !sudo tee >/dev/null %
-"noremap <silent><leader>/ :nohls<CR>
+noremap <silent><leader>/ :nohls<CR>
 
 "inoremap kj <Esc>
 " I can type :help on my own, thanks.
@@ -563,12 +563,13 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.p
 
 
 "快速插入代码片段
-"Bundle 'vim-scripts/UltiSnips'
-Bundle 'SirVer/ultisnips'
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
+Bundle 'vim-scripts/UltiSnips'
+"Bundle 'SirVer/ultisnips'
+"let g:UltiSnipsExpandTrigger = "<tab>"
+"let g:UltiSnipsJumpForwardTrigger = "<tab>"
 "定义存放代码片段的文件夹 .vim/snippets下，使用自定义和默认的，将会的到全局，有冲突的会提示
-"let g:UltiSnipsSnippetDirectories=["snippets", "bundle/UltiSnips/UltiSnips"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+let g:UltiSnipsUsePythonVersion = 2
 
 "快速 加减注释
 "[count]<leader>cc |NERDComComment|
