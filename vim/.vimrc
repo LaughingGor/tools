@@ -560,9 +560,10 @@ let g:ycm_key_list_select_completion=['<c-n>']
 let g:ycm_key_list_previous_completion=['<c-p>']
 "let g:ycm_key_list_previous_completion = ['<Up>']
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+let g:ycm_error_symbol = '$'
 
-
-"快速插入代码片段
+"快速插入代码片r
+"
 Bundle 'vim-scripts/UltiSnips'
 "Bundle 'SirVer/ultisnips'
 "let g:UltiSnipsExpandTrigger = "<tab>"
