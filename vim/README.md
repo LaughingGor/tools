@@ -1,2 +1,2 @@
-this directory if vim tolls.
+this directory is vim tools.
 
