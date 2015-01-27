@@ -134,13 +134,16 @@ au FocusGained * :set relativenumber
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 function! NumberToggle()
-  if(&relativenumber == 1)
-    set number
+  if(&relativenumber == 1 || &number == 1)
+    set nonumber
+    set norelativenumber
   else
     set relativenumber
+    set number
   endif
 endfunc
-nnoremap <C-n> :call NumberToggle()<cr>
+
+nnoremap <C-n> :set norelativenumber! relativenumber?<cr>
 
 "create undo file
 set undolevels=1000 " How many undos
@@ -290,7 +293,7 @@ map k gk
 "nnoremap <C-y> 2<C-y>
 
 ""为方便复制，用<F2>开启/关闭行号显示:
-nnoremap <F2> :set nonumber! number?<CR>
+nnoremap <F2> :call NumberToggle()<CR>
 nnoremap <F3> :set list! list?<CR>
 nnoremap <F4> :set wrap! wrap?<CR>
 "set paste
@@ -561,8 +564,10 @@ let g:ycm_key_list_previous_completion=['<c-p>']
 "let g:ycm_key_list_previous_completion = ['<Up>']
 let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
 let g:ycm_error_symbol = '$'
+let g:ycm_server_log_level = "debug"
+let g:ycm_server_use_vim_stdout = 1
 
-"快速插入代码片r
+"快速插入代码片
 "
 Bundle 'vim-scripts/UltiSnips'
 "Bundle 'SirVer/ultisnips'
@@ -659,7 +664,7 @@ Bundle 'scrooloose/nerdcommenter'
 "let python_highlight_all = 1
 
 " for golang
-Bundle 'jnwhiteh/vim-golang'
+"Bundle 'jnwhiteh/vim-golang'
 
 " for markdown
 "Bundle 'plasticboy/vim-markdown'
